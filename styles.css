@@ -1,0 +1,122 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+    background: 
+        linear-gradient(rgba(128, 0, 128, 0.1), rgba(0, 0, 255, 0.1)), 
+        url('image.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    background: 
+        linear-gradient(rgba(128, 0, 128, 0.1), rgba(0, 0, 255, 0.1)), 
+        url('image.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container,
+nav.navbar,
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        justify-content: center;
+    }
+}
+
+.timer-card,
+.card {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+}
+
+.timer-header {
+    background: linear-gradient(135deg, #8a2be2 0%, #4169e1 100%);
+    color: white;
+}
+
+.timer-tabs .nav-link.active {
+    color: #8a2be2;
+    border-bottom: 3px solid #8a2be2;
+}
+
+.timer-circle {
+    border-color: #8a2be2;
+}
+
+.timer-circle.work {
+    border-color: #8a2be2;
+}
+
+.timer-circle.short-break {
+    border-color: #4169e1;
+}
+
+.timer-circle.long-break {
+    border-color: #9370db;
+}
+
+.btn-primary {
+    background-color: #8a2be2;
+    border-color: #8a2be2;
+}
+
+.btn-success {
+    background-color: #4169e1;
+    border-color: #4169e1;
+}
+
+:focus-visible {
+    outline: 3px solid #8a2be2;
+    outline-offset: 2px;
+}
+
+@media (max-width: 576px) {
+    .timer-circle {
+        transform: scale(0.9);
+        max-width: 100%;
+        max-height: 250px;
+    }
+
+    .btn-action {
+        padding: 0.5rem;
+    }
+}
+
+.form-control:valid {
+    border-color: #4169e1;
+}
+
+.form-control:invalid {
+    border-color: #ff4500;
+}
+
+.tasks-container .task-item {
+    transition: background-color 0.2s ease;
+}
+
+.tasks-container .task-item:hover {
+    background-color: rgba(138, 43, 226, 0.05);
+}

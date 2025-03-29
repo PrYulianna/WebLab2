@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розширений Pomodoro Таймер</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Таймер</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Таймер</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="history.html">Історія</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Вхід</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">Про програму</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Реєстрація</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex flex-column justify-content-center align-items-center py-5">
+        <div class="timer-card card mb-4 w-100">
+            <div class="timer-header d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">Pomodoro Таймер</h2>
+                <span class="material-icons settings-icon" data-bs-toggle="modal" data-bs-target="#settingsModal">
+                    settings
+                </span>
+            </div>
+
+            <div class="card-body">
+                <ul class="nav nav-tabs timer-tabs justify-content-center mb-3" id="timerTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="work-tab" data-bs-toggle="tab" data-type="work" type="button" role="tab">
+                            <span class="material-icons align-middle me-1">work</span> Робота
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="short-break-tab" data-bs-toggle="tab" data-type="shortBreak" type="button" role="tab">
+                            <span class="material-icons align-middle me-1">coffee</span> Коротка перерва
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="long-break-tab" data-bs-toggle="tab" data-type="longBreak" type="button" role="tab">
+                            <span class="material-icons align-middle me-1">self_improvement</span> Довга перерва
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="text-center">
+                    <div class="timer-circle work" id="timerCircle">
+                        <svg class="progress-ring" width="216" height="216">
+                            <circle class="progress-ring__circle" stroke="#8a2be2" stroke-width="8" fill="transparent" r="104" cx="108" cy="108" />
+                        </svg>
+                        <div id="timer">25:00</div>
+                    </div>
+
+                    <div class="session-counter mb-3">
+                        Сесія <span id="sessionCount">1</span> з <span id="totalSessions">4</span>
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-2 mb-3">
+                        <button class="btn btn-primary btn-icon btn-action" id="toggleButton">
+                            <span class="material-icons">play_arrow</span>
+                        </button>
+                        <button class="btn btn-secondary btn-icon btn-action" id="skipButton">
+                            <span class="material-icons">skip_next</span>
+                        </button>
+                        <button class="btn btn-danger btn-icon btn-action" id="resetButton">
+                            <span class="material-icons">refresh</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card w-100 timer-card">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Завдання</h5>
+                <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                    <span class="material-icons align-middle">add</span> Додати завдання
+                </button>
+            </div>
+            <div class="card-body tasks-container p-0" id="tasksList">
+                <div class="p-4 text-center text-muted">
+                    <span class="material-icons" style="font-size: 3rem;">assignment</span>
+                    <p>Поки що немає завдань. Додайте завдання, щоб почати!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Налаштування таймера</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="workDuration" class="form-label">Тривалість робочої сесії (хвилини)</label>
+                        <input type="number" class="form-control" id="workDuration" value="25" min="1" max="60">
+                    </div>
+                    <div class="mb-3">
+                        <label for="shortBreakDuration" class="form-label">Тривалість короткої перерви (хвилини)</label>
+                        <input type="number" class="form-control" id="shortBreakDuration" value="5" min="1" max="15">
+                    </div>
+                    <div class="mb-3">
+                        <label for="longBreakDuration" class="form-label">Тривалість довгої перерви (хвилини)</label>
+                        <input type="number" class="form-control" id="longBreakDuration" value="15" min="1" max="30">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sessionsBeforeLongBreak" class="form-label">Сесій до довгої перерви</label>
+                        <input type="number" class="form-control" id="sessionsBeforeLongBreak" value="4" min="2" max="8">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+                    <button type="button" class="btn btn-primary" id="saveSettingsButton">Зберегти налаштування</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addTaskModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Додати нове завдання</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="taskName" class="form-label">Назва завдання</label>
+                        <input type="text" class="form-control" id="taskName" placeholder="Введіть опис завдання">
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskEstimatedPomodoros" class="form-label">Орієнтовна кількість помодоро</label>
+                        <input type="number" class="form-control" id="taskEstimatedPomodoros" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+                    <button type="button" class="btn btn-primary" id="saveTaskButton">Зберегти завдання</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
