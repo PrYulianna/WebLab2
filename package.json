@@ -1,0 +1,28 @@
+{
+  "name": "pomodoro-timer-vue",
+  "version": "1.0.0",
+  "description": "Pomodoro Timer з VueJS та Express backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "author": "Student",
+  "license": "MIT",
+  "keywords": [
+    "pomodoro",
+    "timer",
+    "vue",
+    "express",
+    "sqlite"
+  ]
+}

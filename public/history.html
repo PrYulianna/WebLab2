@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помодоро Таймер - Історія сесій</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Помодоро Таймер</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Перемкнути навігацію">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Таймер</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="history.html">Історія</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Вхід</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">Про програму</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Реєстрація</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">Історія сесій</h1>
+                
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Завершені сесії</h5>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-primary active">Усі</button>
+                            <button type="button" class="btn btn-outline-primary">Робота</button>
+                            <button type="button" class="btn btn-outline-primary">Перерви</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Дата</th>
+                                    <th>Тип</th>
+                                    <th>Тривалість</th>
+                                    <th>Завдання</th>
+                                    <th>Статус</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-03-24</td>
+                                    <td>Робоча сесія</td>
+                                    <td>25 хв</td>
+                                    <td>Планування проєкту</td>
+                                    <td><span class="badge bg-primary">Завершено</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-24</td>
+                                    <td>Коротка перерва</td>
+                                    <td>5 хв</td>
+                                    <td>-</td>
+                                    <td><span class="badge bg-info">Завершено</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-23</td>
+                                    <td>Робоча сесія</td>
+                                    <td>25 хв</td>
+                                    <td>Перегляд коду</td>
+                                    <td><span class="badge bg-primary">Завершено</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer text-muted d-flex justify-content-between">
+                        <span>Усього сесій: 3</span>
+                        <span>Загальний час роботи: 50 хв</span>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Статистика сесій</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <h6>Тижневий робочий час</h6>
+                                <p class="display-6">3 год 45 хв</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h6>Найпродуктивніший день</h6>
+                                <p class="display-6">Середа</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h6>Виконані завдання</h6>
+                                <p class="display-6">12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
